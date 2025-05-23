@@ -96,9 +96,9 @@ namespace ManufacturingManagementSystem.Controllers
                 foreach (var pm in productMaterials)
                 {
                     var requiredQuantity = pm.QuantityNeeded * order.Quantity;
-                    if (pm.Material.Quantity < requiredQuantity)
+                    if (pm.Material == null || pm.Material.Quantity < requiredQuantity)
                     {
-                        ModelState.AddModelError("Materials", $"Недостаточно материала {pm.Material.Name}: требуется {requiredQuantity}, доступно {pm.Material.Quantity}");
+                        ModelState.AddModelError("Materials", $"Недостаточно материала {pm.Material?.Name ?? "Неизвестный материал"}: требуется {requiredQuantity}, доступно {pm.Material?.Quantity ?? 0}");
                         ViewBag.Products = new SelectList(await _context.Products.ToListAsync(), "Id", "Name");
                         ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name");
                         return View(order);
@@ -138,6 +138,7 @@ namespace ManufacturingManagementSystem.Controllers
                 if (line != null)
                 {
                     line.CurrentWorkOrderId = order.Id;
+                    line.Status = "Stopped"; // Остается Stopped, пока заказ не запущен через Start
                     _context.Update(line);
                     await _context.SaveChangesAsync();
                 }
@@ -203,6 +204,7 @@ namespace ManufacturingManagementSystem.Controllers
             {
                 var existingOrder = await _context.WorkOrders
                     .Include(o => o.ProductionLine)
+                    .Include(o => o.Product)
                     .FirstOrDefaultAsync(o => o.Id == id);
 
                 if (existingOrder == null)
@@ -253,9 +255,9 @@ namespace ManufacturingManagementSystem.Controllers
                 foreach (var pm in productMaterials)
                 {
                     var requiredQuantity = pm.QuantityNeeded * order.Quantity;
-                    if (pm.Material.Quantity < requiredQuantity)
+                    if (pm.Material == null || pm.Material.Quantity < requiredQuantity)
                     {
-                        ModelState.AddModelError("Materials", $"Недостаточно материала {pm.Material.Name}: требуется {requiredQuantity}, доступно {pm.Material.Quantity}");
+                        ModelState.AddModelError("Materials", $"Недостаточно материала {pm.Material?.Name ?? "Неизвестный материал"}: требуется {requiredQuantity}, доступно {pm.Material?.Quantity ?? 0}");
                         ViewBag.Products = new SelectList(await _context.Products.ToListAsync(), "Id", "Name", order.ProductId);
                         ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name", order.ProductionLineId);
                         return View(order);
@@ -294,6 +296,14 @@ namespace ManufacturingManagementSystem.Controllers
                 if (line != null)
                 {
                     line.CurrentWorkOrderId = order.Id;
+                    if (order.Status == "InProgress")
+                    {
+                        line.Status = "Active";
+                    }
+                    else
+                    {
+                        line.Status = "Stopped";
+                    }
                     _context.Update(line);
                 }
                 else if (existingOrder.ProductionLineId.HasValue)
@@ -304,9 +314,12 @@ namespace ManufacturingManagementSystem.Controllers
                     if (oldLine != null && oldLine.CurrentWorkOrderId == existingOrder.Id)
                     {
                         oldLine.CurrentWorkOrderId = null;
+                        oldLine.Status = "Stopped";
                         _context.Update(oldLine);
                     }
                 }
+
+                existingOrder.ProductionLineId = order.ProductionLineId;
 
                 await _context.SaveChangesAsync();
                 Console.WriteLine($"After SaveChanges - Order updated with Id: {order.Id}");
@@ -337,6 +350,7 @@ namespace ManufacturingManagementSystem.Controllers
         {
             var order = await _context.WorkOrders
                 .Include(o => o.ProductionLine)
+                .Include(o => o.Product)
                 .FirstOrDefaultAsync(o => o.Id == id);
             if (order == null)
             {
@@ -350,6 +364,15 @@ namespace ManufacturingManagementSystem.Controllers
             }
 
             order.Status = "InProgress";
+            if (order.ProductionLine != null)
+            {
+                order.ProductionLine.Status = "Active";
+                var totalProductionTime = order.Product.ProductionTimePerUnit * order.Quantity * order.ProductionLine.EfficiencyFactor;
+                order.StartDate = DateTime.UtcNow;
+                order.EstimatedEndDate = order.StartDate.AddMinutes(totalProductionTime);
+                _context.Update(order.ProductionLine);
+            }
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -378,6 +401,7 @@ namespace ManufacturingManagementSystem.Controllers
             if (order.ProductionLine != null && order.ProductionLine.CurrentWorkOrderId == order.Id)
             {
                 order.ProductionLine.CurrentWorkOrderId = null;
+                order.ProductionLine.Status = "Stopped";
                 _context.Update(order.ProductionLine);
             }
 

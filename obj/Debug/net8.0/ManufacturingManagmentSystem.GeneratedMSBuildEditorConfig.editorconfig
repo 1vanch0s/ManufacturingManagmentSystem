@@ -40,12 +40,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/PKSprak5/ManufacturingManagmentSystem/Views/Lines/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZXNcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/PKSprak5/ManufacturingManagmentSystem/Views/Lines/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/PKSprak5/ManufacturingManagmentSystem/Views/Lines/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PKSprak5/ManufacturingManagmentSystem/Views/Lines/Schedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZXNcU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PKSprak5/ManufacturingManagmentSystem/Views/Lines/StartLine.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZXNcU3RhcnRMaW5lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/PKSprak5/ManufacturingManagmentSystem/Views/Materials/Create.cshtml]

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ManufacturingManagementSystem.Models.ProductionLine>
+
+@{
+    ViewData["Title"] = "Дашборд линий";
+}
+
+<h2>Дашборд производственных линий</h2>
+
+<div class="row">
+    @foreach (var line in Model)
+    {
+        var currentOrder = line.CurrentWorkOrder;
+        var progress = 0.0;
+        if (currentOrder != null && currentOrder.Status == "InProgress")
+        {
+            var startDate = currentOrder.StartDate.Kind == DateTimeKind.Unspecified ? DateTime.SpecifyKind(currentOrder.StartDate, DateTimeKind.Utc) : currentOrder.StartDate;
+            var estimatedEndDate = currentOrder.EstimatedEndDate.Kind == DateTimeKind.Unspecified ? DateTime.SpecifyKind(currentOrder.EstimatedEndDate, DateTimeKind.Utc) : currentOrder.EstimatedEndDate;
+
+            // Убедимся, что StartDate не в будущем
+            var now = DateTime.UtcNow;
+            if (startDate > now)
+            {
+                startDate = now; // Если StartDate в будущем, используем текущее время
+            }
+
+            var totalDuration = (estimatedEndDate - startDate).TotalMinutes;
+            var elapsed = (now - startDate).TotalMinutes;
+            progress = totalDuration > 0 ? Math.Max(0, Math.Min(100, (elapsed / totalDuration) * 100)) : 0; // Ограничиваем прогресс от 0 до 100
+        }
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Линия: @line.Name</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Статус:</strong> <span class="@(line.Status == "Active" ? "text-success" : "text-danger")">@line.Status</span></p>
+                    <p><strong>Текущий продукт:</strong> @(currentOrder?.Product?.Name ?? "Нет заказа")</p>
+                    <p>
+                        <strong>Прогресс:</strong> @if (currentOrder != null && currentOrder.Status == "InProgress")
+                        {
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: @progress%;" aria-valuenow="@progress" aria-valuemin="0" aria-valuemax="100">@progress.ToString("F1")%</div>
+                            </div>
+                        }
+                        else
+                        {
+                            <span>Нет активного заказа</span>
+                        }
+                    </p>
+                    <p><strong>Коэффициент эффективности:</strong> @line.EfficiencyFactor</p>
+
+                    <form asp-action="UpdateEfficiency" asp-route-id="@line.Id" method="post" class="form-inline mb-2">
+                        <label for="efficiency-@line.Id" class="mr-2">Изменить коэффициент:</label>
+                        <input type="number" name="EfficiencyFactor" id="efficiency-@line.Id" class="form-control form-control-sm mr-2" value="@line.EfficiencyFactor" min="0.5" max="2.0" step="0.1" />
+                        <button type="submit" class="btn btn-sm btn-primary">Обновить</button>
+                    </form>
+
+                    @if (line.Status == "Stopped")
+                    {
+                        <a asp-action="StartLine" asp-route-id="@line.Id" class="btn btn-sm btn-success mb-2">Запустить линию</a>
+                    }
+                    else
+                    {
+                        <form asp-action="StopLine" asp-route-id="@line.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger mb-2">Остановить</button>
+                        </form>
+                    }
+
+                    <a asp-action="Schedule" asp-route-id="@line.Id" class="btn btn-sm btn-info">Расписание</a>
+                    <a asp-action="Edit" asp-route-id="@line.Id" class="btn btn-sm btn-secondary ml-2">Редактировать</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Вернуться к списку линий</a>
+</div>

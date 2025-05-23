@@ -6,35 +6,34 @@
 
 <h2>Производственные линии</h2>
 
-<p>Всего линий: @ViewBag.LineCount</p>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Добавить линию</a>
+    <a asp-action="Dashboard" class="btn btn-info ml-2">Перейти к дашборду</a>
+</p>
 
-<div class="row">
-    @foreach (var line in Model)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card @((line.Status == "Active" ? "border-success" : "border-danger"))">
-                <div class="card-header">
-                    <h5 class="card-title">@line.Name</h5>
-                    <span class="badge @(line.Status == "Active" ? "bg-success" : "bg-danger")">@line.Status</span>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Коэффициент эффективности: @line.EfficiencyFactor<br />
-                        @if (line.CurrentWorkOrder != null)
-                        {
-                            @: <strong>Текущий продукт:</strong> @line.CurrentWorkOrder.Product.Name<br />
-                            @: <strong>Прогресс:</strong> @((line.CurrentWorkOrder.Status == "InProgress" ? "В процессе" : line.CurrentWorkOrder.Status))
-                        }
-                        else
-                        {
-                            @: <strong>Текущий продукт:</strong> Нет<br />
-                        }
-                    </p>
-                    <a asp-action="Edit" asp-route-id="@line.Id" class="btn btn-sm btn-primary">Управление</a>
-                </div>
-            </div>
-        </div>
-    }
-</div>
-
-<a asp-action="Create" class="btn btn-primary">Добавить линию</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Статус</th>
+            <th>Коэффициент эффективности</th>
+            <th>Текущий заказ</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model)
+        {
+            <tr>
+                <td>@line.Name</td>
+                <td>@line.Status</td>
+                <td>@line.EfficiencyFactor</td>
+                <td>@(line.CurrentWorkOrderId.HasValue ? line.CurrentWorkOrderId.Value.ToString() : "Нет заказа")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@line.Id" class="btn btn-sm btn-secondary">Редактировать</a>
+                    <a asp-action="Schedule" asp-route-id="@line.Id" class="btn btn-sm btn-info ml-2">Расписание</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

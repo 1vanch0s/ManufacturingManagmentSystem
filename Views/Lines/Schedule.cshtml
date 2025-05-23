@@ -1,0 +1,49 @@
+﻿@model ManufacturingManagementSystem.Models.ProductionLine
+
+@{
+    ViewData["Title"] = "Расписание линии";
+}
+
+<h2>Расписание линии: @Model.Name</h2>
+
+@if (Model.WorkOrders.Any())
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Продукт</th>
+                    <th>Количество</th>
+                    <th>Дата начала</th>
+                    <th>Дата завершения</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var order in Model.WorkOrders.OrderBy(o => o.StartDate))
+            {
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.Product?.Name</td>
+                            <td>@order.Quantity</td>
+                            <td>
+                                <form asp-action="Reschedule" asp-route-id="@order.Id" method="post" style="display:inline;">
+                                    <input type="datetime-local" name="StartDate" value="@order.StartDate.ToString("yyyy-MM-ddTHH:mm")" />
+                                    <button type="submit" class="btn btn-sm btn-primary">Изменить</button>
+                                </form>
+                            </td>
+                            <td>@order.EstimatedEndDate.ToString("g")</td>
+                            <td>
+                                <a asp-controller="Orders" asp-action="Edit" asp-route-id="@order.Id" class="btn btn-sm btn-secondary">Редактировать</a>
+                            </td>
+                        </tr>
+            }
+            </tbody>
+        </table>
+}
+else
+{
+        <p>Нет назначенных заказов.</p>
+}
+
+<a asp-action="Dashboard" class="btn btn-secondary">Назад</a>
