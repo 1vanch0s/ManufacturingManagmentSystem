@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ManufacturingManagementSystem.Models.Material>
+
+@{
+    ViewData["Title"] = "Материалы";
+}
+
+<h2>Материалы</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Количество</th>
+            <th>Единица измерения</th>
+            <th>Минимальный запас</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var material in Model)
+        {
+            <tr>
+                <td>@material.Name</td>
+                <td class="@(material.Quantity < material.MinimalStock ? "text-danger" : "")">
+                    @material.Quantity
+                </td>
+                <td>@material.UnitOfMeasure</td>
+                <td>@material.MinimalStock</td>
+                <td>
+                    <a href="/Materials/Edit/@material.Id" class="btn btn-sm btn-primary">Редактировать</a>
+                    <button class="btn btn-sm btn-success" onclick="replenish(@material.Id)">Пополнить</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Materials/Create" class="btn btn-primary">Добавить материал</a>
+
+@section Scripts {
+    <script>
+        async function replenish(id) {
+            const amount = prompt("Введите новое количество:");
+            if (amount && !isNaN(amount) && amount >= 0) {
+                const response = await fetch(`/api/materialsapi/${id}/stock`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(parseFloat(amount))
+                });
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    alert('Ошибка при обновлении количества');
+                }
+            } else {
+                alert('Введите корректное количество');
+            }
+        }
+    </script>
+}

@@ -1,0 +1,538 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PKSprak5\\ManufacturingManagmentSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\data\\productioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:data\\productioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\orders\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\orders\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\ordersapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\ordersapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\materialsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\materialsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\linescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\linescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\lines\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\lines\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\productsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\productsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\models\\productionlinecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:models\\productionlinecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\orders\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\orders\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\lines\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\lines\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\lines\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\lines\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\lines\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\lines\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\linesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\linesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\materials\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\materials\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\materials\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\materials\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\controllers\\materialscontroller.mvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:controllers\\materialscontroller.mvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\materials\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\materials\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\views\\materials\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:views\\materials\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|d:\\pksprak5\\manufacturingmanagmentsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B11F2911-8862-4246-BC80-DE560BC6907F}|ManufacturingManagmentSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrdersApiController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\OrdersApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersApiController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\OrdersApiController.cs",
+              "RelativeToolTip": "Controllers\\OrdersApiController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:18:02.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductionLineCreateDto.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Models\\ProductionLineCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\ProductionLineCreateDto.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Models\\ProductionLineCreateDto.cs",
+              "RelativeToolTip": "Models\\ProductionLineCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:09:51.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Orders\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Edit.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Orders\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T17:54:31.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Orders\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Create.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Orders\\Create.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T17:36:04.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Orders\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Index.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Orders\\Index.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T17:35:47.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAAAwwMEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:35:03.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Views\\Lines\\Index.cshtml.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Index.cshtml.cs",
+              "RelativeToolTip": "Views\\Lines\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T15:11:08.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Lines\\Create.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Create.cshtml",
+              "RelativeToolTip": "Views\\Lines\\Create.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvzYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T15:05:59.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Lines\\Edit.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Lines\\Edit.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:59:08.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Lines\\Index.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Lines\\Index.cshtml",
+              "RelativeToolTip": "Views\\Lines\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:58:53.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LinesController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\LinesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LinesController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\LinesController.cs",
+              "RelativeToolTip": "Controllers\\LinesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:58:16.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LinesApiController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\LinesApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LinesApiController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\LinesApiController.cs",
+              "RelativeToolTip": "Controllers\\LinesApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:57:04.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Products\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Edit.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Products\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Products\\Edit.cshtml",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAAG8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:52:44.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Products\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Create.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Products\\Create.cshtml",
+              "RelativeToolTip": "Views\\Products\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:52:28.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:52:14.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:51:14.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductsApiController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\ProductsApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsApiController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\ProductsApiController.cs",
+              "RelativeToolTip": "Controllers\\ProductsApiController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwEoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:50:35.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:40:24.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Views\\Materials\\Index.cshtml.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Index.cshtml.cs",
+              "RelativeToolTip": "Views\\Materials\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:35:28.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:31:33.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Materials\\Edit.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Materials\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:31:15.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:27:00.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Materials\\Create.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Create.cshtml",
+              "RelativeToolTip": "Views\\Materials\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:26:46.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MaterialsController.Mvc.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\MaterialsController.Mvc.cs",
+              "RelativeDocumentMoniker": "Controllers\\MaterialsController.Mvc.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\MaterialsController.Mvc.cs",
+              "RelativeToolTip": "Controllers\\MaterialsController.Mvc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:26:04.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Materials\\Index.cshtml",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Views\\Materials\\Index.cshtml",
+              "RelativeToolTip": "Views\\Materials\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T14:25:25.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MaterialsApiController.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\MaterialsApiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MaterialsApiController.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Controllers\\MaterialsApiController.cs",
+              "RelativeToolTip": "Controllers\\MaterialsApiController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:20:22.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductionContext.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Data\\ProductionContext.cs",
+              "RelativeDocumentMoniker": "Data\\ProductionContext.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Data\\ProductionContext.cs",
+              "RelativeToolTip": "Data\\ProductionContext.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAuwGUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:16:34.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Models.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Models\\Models.cs",
+              "RelativeDocumentMoniker": "Models\\Models.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Models\\Models.cs",
+              "RelativeToolTip": "Models\\Models.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAIA9wGQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:16:09.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:06:21.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\PKSprak5\\ManufacturingManagmentSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\PKSprak5\\ManufacturingManagmentSystem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-23T14:05:59.036Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

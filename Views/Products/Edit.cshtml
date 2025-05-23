@@ -1,0 +1,112 @@
+﻿@model ManufacturingManagementSystem.Models.Product
+
+@{
+    ViewData["Title"] = "Редактировать продукт";
+}
+
+<h2>Редактировать продукт</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Specifications" class="control-label"></label>
+        <textarea asp-for="Specifications" class="form-control"></textarea>
+        <span asp-validation-for="Specifications" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Category" class="control-label"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MinimalStock" class="control-label"></label>
+        <input asp-for="MinimalStock" class="form-control" type="number" />
+        <span asp-validation-for="MinimalStock" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductionTimePerUnit" class="control-label"></label>
+        <input asp-for="ProductionTimePerUnit" class="form-control" type="number" />
+        <span asp-validation-for="ProductionTimePerUnit" class="text-danger"></span>
+    </div>
+
+    <h4>Привязка материалов</h4>
+    <div id="materials">
+        @if (Model.ProductMaterials != null && Model.ProductMaterials.Any())
+        {
+            foreach (var pm in Model.ProductMaterials)
+            {
+                <div class="material-row form-group row">
+                    <div class="col-md-6">
+                        <label>Материал</label>
+                        <select name="materialIds" class="form-control">
+                            <option value="">Выберите материал</option>
+                            @foreach (var material in ViewBag.Materials)
+                            {
+                                <option value="@material.Id" selected="@(material.Id == pm.MaterialId)">@material.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Количество</label>
+                        <input type="number" name="quantities" class="form-control" step="0.01" value="@pm.QuantityNeeded" />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-secondary mt-4 add-material">Добавить</button>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="material-row form-group row">
+                <div class="col-md-6">
+                    <label>Материал</label>
+                    <select name="materialIds" class="form-control">
+                        <option value="">Выберите материал</option>
+                        @foreach (var material in ViewBag.Materials)
+                        {
+                            <option value="@material.Id">@material.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label>Количество</label>
+                    <input type="number" name="quantities" class="form-control" step="0.01" value="0" />
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-secondary mt-4 add-material">Добавить</button>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Назад</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $('.add-material').click(function () {
+                var newRow = $(this).closest('.material-row').clone();
+                newRow.find('input[name="quantities"]').val(0);
+                $('#materials').append(newRow);
+            });
+        });
+    </script>
+}

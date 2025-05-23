@@ -1,0 +1,44 @@
+﻿@model ManufacturingManagementSystem.Models.WorkOrder
+
+@{
+    ViewData["Title"] = "Создать заказ";
+}
+
+<h2>Создать заказ</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ProductId" class="control-label"></label>
+        <select asp-for="ProductId" class="form-control" asp-items="ViewBag.Products">
+            <option value="">Выберите продукт</option>
+        </select>
+        <span asp-validation-for="ProductId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductionLineId" class="control-label"></label>
+        <select asp-for="ProductionLineId" class="form-control" asp-items="ViewBag.ProductionLines">
+            <option value="">Не назначать линию</option>
+        </select>
+        <span asp-validation-for="ProductionLineId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity" class="control-label"></label>
+        <input asp-for="Quantity" class="form-control" type="number" min="1" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartDate" class="control-label"></label>
+        <input asp-for="StartDate" class="form-control" type="datetime-local" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Создать" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Назад</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

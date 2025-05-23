@@ -1,0 +1,55 @@
+﻿@model ManufacturingManagementSystem.Models.ProductionLine
+
+@{
+    ViewData["Title"] = "Добавить линию";
+}
+
+<h2>Добавить производственную линию</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status" class="form-control">
+            <option value="Active">Active</option>
+            <option value="Stopped" selected>Stopped</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EfficiencyFactor" class="control-label"></label>
+        <input asp-for="EfficiencyFactor" class="form-control" type="number" step="0.1" min="0.5" max="2.0" value="1.0" />
+        <span asp-validation-for="EfficiencyFactor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CurrentWorkOrderId" class="control-label"></label>
+        <select asp-for="CurrentWorkOrderId" class="form-control" asp-items="ViewBag.WorkOrders">
+            <option value="">Нет текущего заказа</option>
+        </select>
+        <span asp-validation-for="CurrentWorkOrderId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Создать" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Назад</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
