@@ -6,16 +6,18 @@
 
 <h2>Заказы</h2>
 
-<table class="table table-bordered">
+<p>
+    <a asp-action="Create" class="btn btn-primary">Создать новый заказ</a>
+</p>
+
+<table class="table">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>Номер</th>
             <th>Продукт</th>
             <th>Количество</th>
-            <th>Дата начала</th>
-            <th>Ожидаемая дата завершения</th>
             <th>Статус</th>
-            <th>Линия</th>
+            <th>Срок выполнения</th>
             <th>Действия</th>
         </tr>
     </thead>
@@ -24,18 +26,32 @@
         {
             <tr>
                 <td>@order.Id</td>
-                <td>@order.Product.Name</td>
+                <td>@order.Product?.Name</td>
                 <td>@order.Quantity</td>
-                <td>@order.StartDate.ToString("g")</td>
-                <td>@order.EstimatedEndDate.ToString("g")</td>
-                <td>@order.Status</td>
-                <td>@(order.ProductionLine != null ? order.ProductionLine.Name : "Не назначена")</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@order.Id" class="btn btn-sm btn-primary">Редактировать</a>
+                    <span class="@(order.Status == "Completed" ? "text-success" :
+                                 order.Status == "Cancelled" ? "text-danger" :
+                                 order.Status == "InProgress" ? "text-warning" : "text-primary")">
+                        @order.Status
+                    </span>
+                </td>
+                <td>@order.EstimatedEndDate.ToString("g")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@order.Id" class="btn btn-sm btn-secondary">Редактировать</a>
+                    @if (order.Status == "Pending")
+                    {
+                        <form asp-action="Start" asp-route-id="@order.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-success">Запустить</button>
+                        </form>
+                    }
+                    @if (order.Status != "Completed" && order.Status != "Cancelled")
+                    {
+                        <form asp-action="Cancel" asp-route-id="@order.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger">Отменить</button>
+                        </form>
+                    }
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-<a asp-action="Create" class="btn btn-primary">Создать заказ</a>

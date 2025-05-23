@@ -2,33 +2,40 @@
 
 @{
     ViewData["Title"] = "Продукты";
+    var categories = (ViewData["Categories"] as List<string>) ?? new List<string>();
+    var selectedCategory = ViewData["SelectedCategory"]?.ToString();
+    var searchString = ViewData["SearchString"]?.ToString();
 }
 
 <h2>Продукты</h2>
 
+<p>
+    <a asp-action="Create" class="btn btn-primary">Добавить продукт</a>
+</p>
+
 <form asp-action="Index" method="get" class="mb-3">
     <div class="row">
-        <div class="col-md-3">
-            <label>Категория:</label>
-            <select name="category" class="form-control" onchange="this.form.submit()">
-                <option value="">Все</option>
-                @foreach (var cat in ViewBag.Categories)
+        <div class="col-md-4">
+            <label for="categoryFilter">Категория:</label>
+            <select name="category" id="categoryFilter" class="form-control">
+                <option value="">Все категории</option>
+                @foreach (var category in categories)
                 {
-                    <option value="@cat">@cat</option>
+                    <option value="@category" selected="@(category == selectedCategory ? "selected" : null)">@category</option>
                 }
             </select>
         </div>
-        <div class="col-md-3">
-            <label>Поиск по имени:</label>
-            <input type="text" name="searchString" class="form-control" />
+        <div class="col-md-4">
+            <label for="searchString">Поиск по названию:</label>
+            <input type="text" name="searchString" id="searchString" value="@searchString" class="form-control" placeholder="Введите название..." />
         </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary mt-4">Фильтровать</button>
+        <div class="col-md-4 align-self-end">
+            <button type="submit" class="btn btn-primary">Фильтровать</button>
         </div>
     </div>
 </form>
 
-<table class="table table-bordered">
+<table class="table">
     <thead>
         <tr>
             <th>Название</th>
@@ -45,11 +52,9 @@
                 <td>@product.ProductionTimePerUnit</td>
                 <td>@product.Category</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-sm btn-primary">Редактировать</a>
+                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-sm btn-secondary">Редактировать</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-<a asp-action="Create" class="btn btn-primary">Добавить продукт</a>

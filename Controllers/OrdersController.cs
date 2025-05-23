@@ -63,10 +63,12 @@ namespace ManufacturingManagementSystem.Controllers
                     return View(order);
                 }
 
-                ProductionLine? line = null;
+                ProductionLine line = null;
                 if (order.ProductionLineId.HasValue)
                 {
-                    line = await _context.ProductionLines.FindAsync(order.ProductionLineId.Value);
+                    line = await _context.ProductionLines
+                        .Include(l => l.CurrentWorkOrder)
+                        .FirstOrDefaultAsync(l => l.Id == order.ProductionLineId.Value);
                     if (line == null)
                     {
                         ModelState.AddModelError("ProductionLineId", "Производственная линия не найдена");
@@ -75,7 +77,7 @@ namespace ManufacturingManagementSystem.Controllers
                         ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name");
                         return View(order);
                     }
-                    else if (line.CurrentWorkOrderId != null && line.CurrentWorkOrderId != 0)
+                    else if (line.CurrentWorkOrderId.HasValue && line.CurrentWorkOrderId != 0)
                     {
                         ModelState.AddModelError("ProductionLineId", "Эта линия уже назначена другому заказу");
                         Console.WriteLine("Line already assigned");
@@ -83,8 +85,24 @@ namespace ManufacturingManagementSystem.Controllers
                         ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name");
                         return View(order);
                     }
-                    line.CurrentWorkOrderId = order.Id; // Синхронизация
-                    _context.Update(line);
+                }
+
+                // Проверка доступности материалов
+                var productMaterials = await _context.ProductMaterials
+                    .Where(pm => pm.ProductId == order.ProductId)
+                    .Include(pm => pm.Material)
+                    .ToListAsync();
+
+                foreach (var pm in productMaterials)
+                {
+                    var requiredQuantity = pm.QuantityNeeded * order.Quantity;
+                    if (pm.Material.Quantity < requiredQuantity)
+                    {
+                        ModelState.AddModelError("Materials", $"Недостаточно материала {pm.Material.Name}: требуется {requiredQuantity}, доступно {pm.Material.Quantity}");
+                        ViewBag.Products = new SelectList(await _context.Products.ToListAsync(), "Id", "Name");
+                        ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name");
+                        return View(order);
+                    }
                 }
 
                 var productionTimePerUnit = product.ProductionTimePerUnit;
@@ -95,7 +113,6 @@ namespace ManufacturingManagementSystem.Controllers
                     totalProductionTime = (int)(totalProductionTime * line.EfficiencyFactor);
                 }
 
-                // Конвертируем StartDate в UTC
                 if (order.StartDate.Kind == DateTimeKind.Unspecified)
                 {
                     order.StartDate = DateTime.SpecifyKind(order.StartDate, DateTimeKind.Utc);
@@ -106,7 +123,6 @@ namespace ManufacturingManagementSystem.Controllers
                 }
 
                 order.EstimatedEndDate = order.StartDate.AddMinutes(totalProductionTime);
-                // Убедимся, что EstimatedEndDate тоже в UTC
                 if (order.EstimatedEndDate.Kind == DateTimeKind.Unspecified)
                 {
                     order.EstimatedEndDate = DateTime.SpecifyKind(order.EstimatedEndDate, DateTimeKind.Utc);
@@ -117,6 +133,15 @@ namespace ManufacturingManagementSystem.Controllers
                 Console.WriteLine($"Before SaveChanges - Order: {order.Id}, EstimatedEndDate: {order.EstimatedEndDate}");
                 _context.Add(order);
                 await _context.SaveChangesAsync();
+
+                // Синхронизация линии
+                if (line != null)
+                {
+                    line.CurrentWorkOrderId = order.Id;
+                    _context.Update(line);
+                    await _context.SaveChangesAsync();
+                }
+
                 Console.WriteLine($"After SaveChanges - Order saved with Id: {order.Id}");
                 return RedirectToAction(nameof(Index));
             }
@@ -195,10 +220,12 @@ namespace ManufacturingManagementSystem.Controllers
                     return View(order);
                 }
 
-                ProductionLine? line = null;
+                ProductionLine line = null;
                 if (order.ProductionLineId.HasValue)
                 {
-                    line = await _context.ProductionLines.FindAsync(order.ProductionLineId.Value);
+                    line = await _context.ProductionLines
+                        .Include(l => l.CurrentWorkOrder)
+                        .FirstOrDefaultAsync(l => l.Id == order.ProductionLineId.Value);
                     if (line == null)
                     {
                         ModelState.AddModelError("ProductionLineId", "Производственная линия не найдена");
@@ -207,7 +234,7 @@ namespace ManufacturingManagementSystem.Controllers
                         ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name", order.ProductionLineId);
                         return View(order);
                     }
-                    else if (line.CurrentWorkOrderId != null && line.CurrentWorkOrderId != order.Id)
+                    else if (line.CurrentWorkOrderId.HasValue && line.CurrentWorkOrderId != order.Id)
                     {
                         ModelState.AddModelError("ProductionLineId", "Эта линия уже назначена другому заказу");
                         Console.WriteLine("Line already assigned");
@@ -215,16 +242,23 @@ namespace ManufacturingManagementSystem.Controllers
                         ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name", order.ProductionLineId);
                         return View(order);
                     }
-                    line.CurrentWorkOrderId = order.Id; // Синхронизация
-                    _context.Update(line);
                 }
-                else if (existingOrder.ProductionLineId.HasValue)
+
+                // Проверка доступности материалов
+                var productMaterials = await _context.ProductMaterials
+                    .Where(pm => pm.ProductId == order.ProductId)
+                    .Include(pm => pm.Material)
+                    .ToListAsync();
+
+                foreach (var pm in productMaterials)
                 {
-                    var oldLine = await _context.ProductionLines.FindAsync(existingOrder.ProductionLineId.Value);
-                    if (oldLine != null && oldLine.CurrentWorkOrderId == existingOrder.Id)
+                    var requiredQuantity = pm.QuantityNeeded * order.Quantity;
+                    if (pm.Material.Quantity < requiredQuantity)
                     {
-                        oldLine.CurrentWorkOrderId = null;
-                        _context.Update(oldLine);
+                        ModelState.AddModelError("Materials", $"Недостаточно материала {pm.Material.Name}: требуется {requiredQuantity}, доступно {pm.Material.Quantity}");
+                        ViewBag.Products = new SelectList(await _context.Products.ToListAsync(), "Id", "Name", order.ProductId);
+                        ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name", order.ProductionLineId);
+                        return View(order);
                     }
                 }
 
@@ -236,7 +270,6 @@ namespace ManufacturingManagementSystem.Controllers
                     totalProductionTime = (int)(totalProductionTime * line.EfficiencyFactor);
                 }
 
-                // Конвертируем StartDate в UTC
                 if (order.StartDate.Kind == DateTimeKind.Unspecified)
                 {
                     order.StartDate = DateTime.SpecifyKind(order.StartDate, DateTimeKind.Utc);
@@ -247,7 +280,6 @@ namespace ManufacturingManagementSystem.Controllers
                 }
 
                 order.EstimatedEndDate = order.StartDate.AddMinutes(totalProductionTime);
-                // Убедимся, что EstimatedEndDate тоже в UTC
                 if (order.EstimatedEndDate.Kind == DateTimeKind.Unspecified)
                 {
                     order.EstimatedEndDate = DateTime.SpecifyKind(order.EstimatedEndDate, DateTimeKind.Utc);
@@ -257,6 +289,25 @@ namespace ManufacturingManagementSystem.Controllers
 
                 Console.WriteLine($"Before SaveChanges - Order: {order.Id}, EstimatedEndDate: {order.EstimatedEndDate}");
                 _context.Entry(existingOrder).CurrentValues.SetValues(order);
+
+                // Синхронизация линии
+                if (line != null)
+                {
+                    line.CurrentWorkOrderId = order.Id;
+                    _context.Update(line);
+                }
+                else if (existingOrder.ProductionLineId.HasValue)
+                {
+                    var oldLine = await _context.ProductionLines
+                        .Include(l => l.CurrentWorkOrder)
+                        .FirstOrDefaultAsync(l => l.Id == existingOrder.ProductionLineId.Value);
+                    if (oldLine != null && oldLine.CurrentWorkOrderId == existingOrder.Id)
+                    {
+                        oldLine.CurrentWorkOrderId = null;
+                        _context.Update(oldLine);
+                    }
+                }
+
                 await _context.SaveChangesAsync();
                 Console.WriteLine($"After SaveChanges - Order updated with Id: {order.Id}");
                 return RedirectToAction(nameof(Index));
@@ -277,6 +328,61 @@ namespace ManufacturingManagementSystem.Controllers
                 ViewBag.ProductionLines = new SelectList(await _context.ProductionLines.ToListAsync(), "Id", "Name", order.ProductionLineId);
                 return View(order);
             }
+        }
+
+        // POST: /Orders/Start/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Start(int id)
+        {
+            var order = await _context.WorkOrders
+                .Include(o => o.ProductionLine)
+                .FirstOrDefaultAsync(o => o.Id == id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            if (order.Status != "Pending")
+            {
+                TempData["Error"] = "Заказ можно запустить только со статусом Pending";
+                return RedirectToAction(nameof(Index));
+            }
+
+            order.Status = "InProgress";
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        // POST: /Orders/Cancel/{id}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Cancel(int id)
+        {
+            var order = await _context.WorkOrders
+                .Include(o => o.ProductionLine)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            if (order.Status == "Completed" || order.Status == "Cancelled")
+            {
+                TempData["Error"] = "Заказ уже завершен или отменен";
+                return RedirectToAction(nameof(Index));
+            }
+
+            order.Status = "Cancelled";
+            if (order.ProductionLine != null && order.ProductionLine.CurrentWorkOrderId == order.Id)
+            {
+                order.ProductionLine.CurrentWorkOrderId = null;
+                _context.Update(order.ProductionLine);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

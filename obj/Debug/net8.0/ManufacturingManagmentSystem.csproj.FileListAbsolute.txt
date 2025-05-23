@@ -136,3 +136,4 @@ D:\PKSprak5\ManufacturingManagmentSystem\obj\Debug\net8.0\ManufacturingManagment
 D:\PKSprak5\ManufacturingManagmentSystem\obj\Debug\net8.0\ManufacturingManagmentSystem.genruntimeconfig.cache
 D:\PKSprak5\ManufacturingManagmentSystem\obj\Debug\net8.0\ref\ManufacturingManagmentSystem.dll
 D:\PKSprak5\ManufacturingManagmentSystem\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\PKSprak5\ManufacturingManagmentSystem\obj\Debug\net8.0\ManufacturingManagmentSystem.sourcelink.json
