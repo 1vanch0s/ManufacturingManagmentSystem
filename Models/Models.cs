@@ -12,13 +12,13 @@ namespace ManufacturingManagementSystem.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public string Specifications { get; set; }
+        public string? Specifications { get; set; }
 
         [Required(ErrorMessage = "Категория обязательна")]
         [StringLength(50)]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "Минимальный запас должен быть неотрицательным")]
         public int MinimalStock { get; set; }
@@ -76,10 +76,10 @@ namespace ManufacturingManagementSystem.Models
     public class ProductMaterial
     {
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
         public int MaterialId { get; set; }
-        public Material Material { get; set; }
+        public Material? Material { get; set; }
 
         [Range(0, double.MaxValue, ErrorMessage = "Количество материала должно быть неотрицательным")]
         public decimal QuantityNeeded { get; set; }

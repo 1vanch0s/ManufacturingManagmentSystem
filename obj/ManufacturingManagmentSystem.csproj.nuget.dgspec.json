@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PKSprak5\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj": {}
+    "C:\\Users\\1vanc\\Documents\\GitHub\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj": {}
   },
   "projects": {
-    "D:\\PKSprak5\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj": {
+    "C:\\Users\\1vanc\\Documents\\GitHub\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PKSprak5\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj",
+        "projectUniqueName": "C:\\Users\\1vanc\\Documents\\GitHub\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj",
         "projectName": "ManufacturingManagmentSystem",
-        "projectPath": "D:\\PKSprak5\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj",
-        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "D:\\PKSprak5\\ManufacturingManagmentSystem\\obj\\",
+        "projectPath": "C:\\Users\\1vanc\\Documents\\GitHub\\ManufacturingManagmentSystem\\ManufacturingManagmentSystem.csproj",
+        "packagesPath": "C:\\Users\\1vanc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1vanc\\Documents\\GitHub\\ManufacturingManagmentSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VSSDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1vanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
